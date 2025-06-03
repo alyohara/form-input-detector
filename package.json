@@ -1,0 +1,16 @@
+{
+  "name": "tesina-figma",
+  "version": "1.0.0",
+  "description": "This Figma plugin helps designers identify and classify different types of form input elements in their designs. It can detect various input types such as:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.113.0",
+    "typescript": "^5.8.3"
+  }
+}

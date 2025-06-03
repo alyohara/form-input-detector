@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    button {
+      background-color: #18A0FB;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #0D8DE3;
+    }
+
+    .results {
+      margin-top: 16px;
+    }
+
+    .result-item {
+      padding: 8px;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    .result-item:last-child {
+      border-bottom: none;
+    }
+
+    .no-selection {
+      color: #666;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Form Input Detector</h3>
+    <p>Select form input components and click the button below to detect their types.</p>
+    <button id="detect">Detect Input Types</button>
+    <div id="results" class="results">
+      <p class="no-selection">No inputs detected yet. Select some components first.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('detect').onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'detect-inputs' } }, '*');
+    };
+
+    window.onmessage = (event) => {
+      const message = event.data.pluginMessage;
+      
+      if (message.type === 'detection-results') {
+        const resultsDiv = document.getElementById('results');
+        
+        if (message.results.length === 0) {
+          resultsDiv.innerHTML = '<p class="no-selection">No form inputs detected in selection.</p>';
+          return;
+        }
+
+        resultsDiv.innerHTML = '<h4>Detected Inputs:</h4>';
+        message.results.forEach(result => {
+          const resultItem = document.createElement('div');
+          resultItem.className = 'result-item';
+          resultItem.textContent = `${result.name}: ${result.type}`;
+          resultsDiv.appendChild(resultItem);
+        });
+      }
+    };
+  </script>
+</body>
+</html> 
