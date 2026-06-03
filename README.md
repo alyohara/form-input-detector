@@ -1,7 +1,6 @@
 # Form Input Detector - Figma Plugin
 
 <div align="center">
-  <img src="assets/icon.png" alt="Form Input Detector Logo" width="128">
   <h3>Automatically detect and classify form input types in your Figma designs</h3>
 </div>
 
