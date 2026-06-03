@@ -69,7 +69,7 @@
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/form-input-detector.git
+   git clone https://github.com/alyohara/form-input-detector.git
    cd form-input-detector
    ```
 
@@ -146,7 +146,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- [Open an issue](https://github.com/yourusername/form-input-detector/issues)
+- [Open an issue](https://github.com/alyohara/form-input-detector/issues)
 - [Join our community](https://forum.figma.com/plugins)
 - [Read the documentation](./docs)
 
@@ -159,5 +159,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  Made with ❤️ by <a href="https://github.com/yourusername">Your Name</a>
+   Made with ❤️ by <a href="https://github.com/alyohara">Angel Leonardo Bianco</a>
 </div> 
